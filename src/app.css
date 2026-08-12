@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --cor-principal: rgb(81, 173, 204);
+    --cor-secundaria: rgb(25, 70, 85);
+}
+header {
+    background-color: var(--cor-principal);
+    padding: 20px;
+    box-shadow: 0 1px 2px black;
+}
+.cadastro {
+    padding: 20px;
+}
+.form-control {
+    background-color: #7b7b7b25;
+    padding: 15px 25px;
+    border-radius: 5px;
+}
+.add-filme {    
+    font-weight: bold;
+    all: unset;
+    color: var(--cor-principal);
+    cursor: pointer;
+    margin-bottom: 1em;
+    padding: 5px;
+}
+.add-filme:hover {
+    border-bottom: 1px solid var(--cor-principal);
+}
+.filtro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px;
+}
+.filtro select {
+    padding: 2px;
+}
+.card {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 35px;
+}
+@media screen and (min-width: 700px) {
+    main {
+        width: 700px;
+    }
+}

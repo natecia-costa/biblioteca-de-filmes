@@ -1,0 +1,21 @@
+.info {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 30px 1fr 1fr 30px;
+    align-items: start;
+    padding: 5px;
+}
+.info input {
+    height: 20px;
+    width: 20px;
+}
+.info button {
+    all: unset;
+    padding: 3px;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+.info button:hover {
+    border-bottom: 1px solid red;
+}

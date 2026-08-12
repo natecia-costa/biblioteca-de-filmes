@@ -1,0 +1,16 @@
+.form-section {
+    display: flex;
+    flex-direction: column;
+}
+.form-section label {    
+    font-weight: bold;
+}
+.form-section input {
+    margin: .6em 0;
+    padding: .7em;
+    border-radius: 0;
+    border: none;
+}
+.form-section input::placeholder {
+    color: #7b7b7b;
+}

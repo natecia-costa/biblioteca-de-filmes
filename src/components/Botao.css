@@ -1,0 +1,13 @@
+.add {
+    width: 200px;
+    padding: 5px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.add:hover {
+    cursor: pointer;
+    background-color: var(--cor-principal);
+    color: black;
+}
