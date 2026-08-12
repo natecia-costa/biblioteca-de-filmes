@@ -1,6 +1,14 @@
 # 🎬 Minha Biblioteca de Filmes
 
+🔗 **Projeto online:** [Clique aqui para acessar](https://biblioteca-de-filmes-eight.vercel.app/)
+
 Projeto desenvolvido durante meu estudo de React.
+
+Uma aplicação simples para adicionar, concluir e remover filmes.
+
+## Preview
+
+![Lista de tarefas](./screenshots/preview-biblioteca-de-filmes.png)
 
 ## Tecnologias
 
