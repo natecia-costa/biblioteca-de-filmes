@@ -6,60 +6,46 @@ import Filtros from "./components/Filtros"
 import Botao from "./components/Botao"
 
 function App() {
-  //Controla a interface, o formulário começa escondido
   const [mostrar, setMostrar] = useState(false)
-  //Guarda o que está sendo digitado.
   const [novoFilme, setNovoFilme] = useState("")
-  //Guarda o gênero digitado.
   const [novoGenero, setNovoGenero] = useState("")
-  //Guarda todos os filmes cadastrados.
-  const [filmes, setFilmes] = useState([])
+  const [filmes, setFilmes] = useState(() => {
+    const dados = localStorage.getItem("filmes")
+    if (dados !== null) {
+      return JSON.parse(dados)
+    }
+    return []
+  })
 
   const [filtroStatus, setFiltroStatus] = useState("todos")
   const [filtroGenero, setFiltroGenero] = useState("todos")
-  //Exibe o formulário
   function mostrarFormulario() {
     setMostrar(true) 
   }
   
   function addFilme(event) {
     event.preventDefault()
-    //Faz a verificação se os campos estão vazios
     if (novoFilme.trim() && novoGenero.trim()) {
-      //Adicionar o novo filme cadastrado ao array que contém os outros filmes
       setFilmes([...filmes,
         {id: Date.now(), nome: novoFilme, genero: novoGenero, assistido: false},
       ])
-      //Limpa os campos
       setNovoFilme("")
       setNovoGenero("")
-      //Esconde o formulário
       setMostrar(false)      
     } else {
       alert("Digite o nome e o gênero do filme!")
     }
   }
-  // Atualiza a lista filtrando apenas os filmes que possuem o ID diferente do idParaRemover. qu foi clicado.
   function remove(idParaRemover){
-    setFilmes(filmes.filter((item) => item.id !== idParaRemover))
+    setFilmes((filmesAtuais) => filmesAtuais.filter((item) => item.id !== idParaRemover))
   }
-  // Função que recebe o ID do filme que deve ser marcado/desmarcado
   function alternarAssistido(id) {
-    //setFilmes atualiza o estado da lista com o novo array  modificado pelo map() que verifica se o ID do filme atual é o mesmo ID enviado para a função, se for o mesmo ID: cria um novo objeto copiando os dados antigos e inverte o valor de "assistido", se NÃO for o mesmo ID: retorna o filme idêntico, sem nenhuma alteração
-    setFilmes(filmes.map((item) => item.id === id ? {...item, assistido: !item.assistido} : item))
+    setFilmes((filmesAtuais) => filmesAtuais.map((item) => item.id === id ? {...item, assistido: !item.assistido} : item))
   }
-  //Quando filmes mudar, o React executa esse efeito
   useEffect (() => {
-    //guarda o nome e o valor convertido em string
     localStorage.setItem("filmes", JSON.stringify(filmes))
   }, [filmes])
-  //Quando a aplicação abre, se existir alguma coisa salva com essa chave, transforma e coloca esse array novamente no estado
-  useEffect(() => {
-    const dados = localStorage.getItem("filmes")
-    if (dados !== null)
-      setFilmes(JSON.parse(dados))
-  }, [])
-
+  
   return (
     <>
       <header>
