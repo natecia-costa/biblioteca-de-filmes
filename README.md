@@ -8,7 +8,7 @@ Uma aplicação simples para adicionar, concluir e remover filmes.
 
 ## Preview
 
-![Lista de tarefas](./screenshots/preview-biblioteca-de-filmes.png)
+![Biblioteca de filmes](./screenshots/preview-biblioteca-de-filmes.png)
 
 ## Tecnologias
 
