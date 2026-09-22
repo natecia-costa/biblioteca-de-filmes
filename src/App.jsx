@@ -67,8 +67,8 @@ function App() {
           <Filtros filtroStatus={filtroStatus} setFiltroStatus={setFiltroStatus} filtroGenero={filtroGenero} setFiltroGenero={setFiltroGenero} filmes={filmes} />
         </section>
         <section className="card">
-          <h4>Filmes</h4>
-          <h4>Gênero</h4>
+          <h3>Filmes</h3>
+          <h3>Gênero</h3>
         </section>
         <section >
           {filmes
